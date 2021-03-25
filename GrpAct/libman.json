@@ -1,0 +1,21 @@
+{
+  "version": "1.0",
+  "defaultProvider": "cdnjs",
+  "libraries": [
+    {
+      "provider": "unpkg",
+      "library": "bootstrap@4.6.0",
+      "destination": "wwwroot/lib/bootstrap/"
+    },
+    {
+      "provider": "unpkg",
+      "library": "font-awesome@4.7.0",
+      "destination": "wwwroot/font-awesome/"
+    },
+    {
+      "provider": "unpkg",
+      "library": "bootstrap@5.0.0-beta2",
+      "destination": "wwwroot/bootstrap/"
+    }
+  ]
+}

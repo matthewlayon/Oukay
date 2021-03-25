@@ -1,0 +1,250 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>OUKAY</title>
+    <script src="~/Models/assets/js/main.js"></script>
+    <link rel="shortcut icon" type="image/x-icon" href="~/Media/logo.png" />
+    
+    <link href="~/Models/assets/css/styles.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+</head>
+
+<body>
+    <!--========== SCROLL TOP ==========-->
+    <a href="#" class="scrolltop" id="scroll-top">
+        <i class='bx bx-chevron-up scrolltop__icon'></i>
+    </a>
+
+    <!--========== HEADER ==========-->
+    <header class="l-header" id="header">
+        <nav class="nav bd-container">
+            <a href="#" class="nav__logo">Oukay</a>
+
+            <div class="nav__menu" id="nav-menu">
+                <ul class="nav__list">
+                    <li class="nav__item"><a href="#home" class="nav__link active-link">Home</a></li>
+                    <li class="nav__item"><a href="#about" class="nav__link">About</a></li>
+                    <li class="nav__item"><a href="#menu" class="nav__link">Featured</a></li>
+                    <li class="nav__item"><a href="#services" class="nav__link">Shop</a></li>
+                    <li class="nav__item"><a href="~/GrpAct/Login" class="nav__link">Login</a></li>
+                    <li class="nav__item"><a href="~/GrpAct/Login" class="nav__link"><i class="fa fa-shopping-cart"></i></a></li>
+                    <li><i class='bx bx-moon change-theme' id="theme-button"></i></li>
+                </ul>
+            </div>
+
+            <div class="nav__toggle" id="nav-toggle">
+                <i class='bx bx-menu'></i>
+            </div>
+        </nav>
+    </header>
+
+    <main class="l-main">
+        <!--========== HOME ==========-->
+        <section class="home" id="home">
+            <div class="home__container bd-container bd-grid">
+                <div class="home__data">
+                    <h1 class="home__title">Oukay</h1>
+                    <h2 class="home__subtitle">Your online ukay-ukay store</h2>
+                    <a href="#menu" class="button">Featured Item</a>
+                </div>
+
+                <img src="~/Media/logo.png" alt="" class="home__img" />
+            </div>
+        </section>
+        <hr style="        width: 50%;
+        border-top: 3px solid #ffef2a;" />
+        <!--========== ABOUT ==========-->
+        <section class="about section bd-container" id="about">
+            <div class="about__container  bd-grid">
+                <div class="about__data">
+                    <span class="section-subtitle about__initial">About us</span>
+                    <h2 class="section-title about__initial">Shop ukay-ukay <br /> anytime, anywhere</h2>
+                    <p class="about__description">Oukay offers you conveniece and safety, without going out your house, you can easily find retro and vintage pieces to match your wardrobe.</p>
+                    <a href="#services" class="button">Explore owners</a>
+                </div>
+                <img src="~/Media/about.jpg" alt="" class="about__img" />
+            </div>
+        </section>
+
+        <!--========== MENU ==========-->
+        <section class="menu section bd-container" id="menu">
+            <span class="section-subtitle">Special</span>
+            <h2 class="section-title">Featured</h2>
+
+            @*<div class="menu__container bd-grid">
+                <div class="menu__content">
+                    <img src="assets/img/plate1.png" alt="" class="menu__img">
+                    <h3 class="menu__name">Barbecue salad</h3>
+                    <span class="menu__detail">Delicious dish</span>
+                    <span class="menu__preci">$22.00</span>
+                    <a href="#" class="button menu__button"><i class='bx bx-cart-alt'></i></a>
+                </div>
+
+                <div class="menu__content">
+                    <img src="assets/img/plate2.png" alt="" class="menu__img">
+                    <h3 class="menu__name">Salad with fish</h3>
+                    <span class="menu__detail">Delicious dish</span>
+                    <span class="menu__preci">$12.00</span>
+                    <a href="#" class="button menu__button"><i class='bx bx-cart-alt'></i></a>
+                </div>
+
+                <div class="menu__content">
+                    <img src="assets/img/plate3.png" alt="" class="menu__img">
+                    <h3 class="menu__name">Spinach salad</h3>
+                    <span class="menu__detail">Delicious dish</span>
+                    <span class="menu__preci">$9.50</span>
+                    <a href="#" class="button menu__button"><i class='bx bx-cart-alt'></i></a>
+                </div>*@
+            @*</div>*@
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="column">
+                        <img src="~/Media/Gallery/h6.png" />
+                        <img src="~/Media/Gallery/h2.png" />
+                        <img src="~/Media/Gallery/h1.png" />
+                        <img src="~/Media/Gallery/h8.jpg" />
+                        <img src="~/Media/Gallery/h14.png" />
+                    </div>
+                    <div class="column">
+                        <img src="~/Media/Gallery/h11.jpg" />
+                        <img src="~/Media/Gallery/h12.png" />
+                        <img src="~/Media/Gallery/h4.jpg" />
+                        <img src="~/Media/Gallery/h7.png" />
+                    </div>
+                    <div class="column">
+                        <img src="~/Media/Gallery/h9.png" />
+                        <img src="~/Media/Gallery/h5.png" />
+                        <img src="~/Media/Gallery/h13.png" />
+                        <img src="~/Media/Gallery/h10.jpg" />
+
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!--========== SERVICES ==========-->
+        <section class="services section bd-container" id="services">
+            <span class="section-subtitle">Offering</span>
+            <h2 class="section-title">Our owners</h2>
+
+            <div class="services__container  bd-grid">
+                <div class="services__content">
+                    <svg class="services__img">
+                        <img src="~/Media/machu.PNG" class="menu__img" />
+                    </svg>
+                    <h3 class="services__title">Matthew Layon</h3>
+
+                </div>
+
+                <div class="services__content">
+                    <svg class="services__img">
+                        <img src="~/Media/aly.PNG" class="menu__img" />
+                    </svg>
+                    <h3 class="services__title">Alyssa Falsis</h3>
+                </div>
+
+                <div class="services__content">
+                    <svg class="services__img">
+                        <img src="~/Media/zoi.PNG" class="menu__img" />
+                    </svg>
+                    <h3 class="services__title">Zoilo Poblete</h3>
+                </div>
+            </div>
+        </section>
+
+        <!--===== APP =======-->
+        <section class="app section bd-container">
+            <div class="app__container bd-grid">
+                <div class="app__data">
+                    <span class="section-subtitle app__initial">Project Oukay</span>
+                    <h2 class="section-title app__initial">oUkay?</h2>
+                    <p class="app__description">
+                        With every purchase you can help a person in need. Half of the processd will be used in gathering a pandemic kit
+                        called "Oukay?" that includes pandemic essentials which will be given to the less fotrunate.
+                    </p>
+                    <div class="app__stores">
+                        <a href="#"><img src="assets/img/app1.png" alt="" class="app__store"></a>
+                        <a href="#"><img src="assets/img/app2.png" alt="" class="app__store"></a>
+                    </div>
+                </div>
+                <img src="~/Media/projectoukay.png" alt="" class="app__img" />
+            </div>
+        </section>
+        <hr style="        width: 50%;
+        border-top: 3px solid #ffef2a;" />
+        <!--========== CONTACT US ==========-->
+        <section class="contact section bd-container" id="contact">
+            <div class="contact__container bd-grid">
+                <div class="contact__data">
+                    <span class="section-subtitle contact__initial">Let's talk</span>
+                    <h2 class="section-title contact__initial">Contact us</h2>
+                    <p class="contact__description">
+                        If you have any inquiries about the collections or questions about your orders, you may contact us through our social media account and through our email.
+                        We will get to you as soon as possible.
+                    </p>
+                </div>
+
+                <div class="contact__button">
+                    <a href="#" class="button">Contact us now</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!--========== FOOTER ==========-->
+    <footer class="footer section bd-container">
+        <div class="footer__container bd-grid">
+            <div class="footer__content">
+                <a href="#" class="footer__logo">Oukay</a>
+                <span class="footer__description">Clothing</span>
+                <div>
+                    <a href="#" class="footer__social"><i class='bx bxl-facebook'></i></a>
+                    <a href="#" class="footer__social"><i class='bx bxl-instagram'></i></a>
+                    <a href="#" class="footer__social"><i class='bx bxl-twitter'></i></a>
+                </div>
+            </div>
+
+            <div class="footer__content">
+                <h3 class="footer__title">Services</h3>
+                <ul>
+                    <li><a href="#" class="footer__link">Featured</a></li>
+                    <li><a href="#" class="footer__link">Shop</a></li>
+                    <li><a href="#" class="footer__link">Shipping</a></li>
+                </ul>
+            </div>
+
+            <div class="footer__content">
+                <h3 class="footer__title">Information</h3>
+                <ul>
+                    <li><a href="#" class="footer__link">About</a></li>
+                    <li><a href="#" class="footer__link">Contact us</a></li>
+                    <li><a href="#" class="footer__link">Sign In</a></li>
+                    <li><a href="#" class="footer__link">Terms of services</a></li>
+                </ul>
+            </div>
+
+            <div class="footer__content">
+                <h3 class="footer__title">Address</h3>
+                <ul>
+                    <li>1708 Lancer St.</li>
+                    <li>Parañaque, Metro Manila</li>
+                    <li>881-Oukay</li>
+                    <li>oukay.clothing@email.com</li>
+                </ul>
+            </div>
+        </div>
+
+        <p class="footer__copy">&#169; 2020 Oukay. All right reserved</p>
+    </footer>
+
+    <!--========== SCROLL REVEAL ==========-->
+    <script src="https://unpkg.com/scrollreveal"></script>
+
+    <!--========== MAIN JS ==========-->
+    <script src="assets/js/main.js"></script>
+</body>
+</html>
