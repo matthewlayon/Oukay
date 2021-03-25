@@ -1,0 +1,145 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>OUKAY</title>
+    <script src="~/Models/assets/js/main.js"></script>
+    <link href="~/Models/assets/css/styles.css" rel="stylesheet" />
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <link href="~/Models/assets/css/styles.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+</head>
+
+<body style="        background-color: #fff8e8;
+        font-family: 'Poppins', sans-serif;">
+    
+    <header class="l-header" id="header">
+        <nav class="nav bd-container">
+            <a href="#" class="nav__logo" style="font-size: 15px;">Oukay</a>
+
+            <div class="nav__menu" id="nav-menu">
+                <ul class="nav__list" style="font-size: 15px;">
+                    <li class="nav__item"><a href="~/Views/GrpAct/Login.cshtml" class="nav__link">Home</a></li>
+                    <li class="nav__item"><a href="#services" class="nav__link">Shop</a></li>
+                    <li class="nav__item"><a href="~/GrpAct/Login" class="nav__link"><i class="fa fa-shopping-cart"></i></a></li>
+                    <li><i class='bx bx-moon change-theme' id="theme-button"></i></li>
+                </ul>
+            </div>
+
+            <div class="nav__toggle" id="nav-toggle">
+                <i class='bx bx-menu'></i>
+            </div>
+        </nav>
+    </header>
+
+    <a href="#" class="scrolltop" id="scroll-top">
+        <i class='bx bx-chevron-up scrolltop__icon'></i>
+    </a>
+    <br /><br /><br /><br />
+    <hr style="        width: 20%;
+        border-top: 2px solid #ffef2a;" />
+    <br />
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 col-md-offset-3">
+                <div class="panel panel-login card shadow">
+                    <div class="panel-heading inner">
+                        <div class="row">
+                            <div class="col-xs-6">
+                                <a href="#" class="active" id="login-form-link">Login</a>
+                            </div>
+                            <div class="col-xs-6">
+                                <a href="#" id="register-form-link">Register</a>
+                            </div>
+                        </div>
+                        <hr>
+                    </div>
+                    <div class="panel-body inner">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <form id="login-form" action="https://phpoll.com/login/process" method="post" role="form" style="display: block;">
+                                    <div class="form-group">
+                                        <input type="text" name="username" id="username" tabindex="1" class="form-control" placeholder="Username" value="">
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="password" name="password" id="password" tabindex="2" class="form-control" placeholder="Password">
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="row">
+                                            <div class="col-sm-6 col-sm-offset-3">
+                                                <input type="submit" name="register-submit" id="register-submit" tabindex="4" class="form-control btn btn-register" value="Log In">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                                <form id="register-form" action="https://phpoll.com/register/process" method="post" role="form" style="display: none;">
+                                    <div class="form-group">
+                                        <input type="text" name="username" id="username" tabindex="1" class="form-control" placeholder="Username" value="">
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="password" name="password" id="password" tabindex="1" class="form-control" placeholder="Password" value="">
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="password" name="confirm-password" id="confirm-password" tabindex="2" class="form-control" placeholder="Confirm Password">
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="email" name="name" id="name" tabindex="2" class="form-control" placeholder="Email">
+                                    </div>
+
+                                    <div class="form-group">
+                                        <div class="row">
+                                            <div class="col-sm-6 col-sm-offset-3">
+                                                <input type="submit" name="register-submit" id="register-submit" tabindex="4" class="form-control btn btn-register" value="Register Now">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <hr style="        width: 20%;
+        border-top: 2px solid #ffef2a;" />
+    <script>
+        $(function () {
+
+            $('#login-form-link').click(function (e) {
+                $("#login-form").delay(100).fadeIn(100);
+                $("#register-form").fadeOut(100);
+                $('#register-form-link').removeClass('active');
+                $(this).addClass('active');
+                e.preventDefault();
+            });
+            $('#register-form-link').click(function (e) {
+                $("#register-form").delay(100).fadeIn(100);
+                $("#login-form").fadeOut(100);
+                $('#login-form-link').removeClass('active');
+                $(this).addClass('active');
+                e.preventDefault();
+            });
+
+        });
+
+    </script>
+
+</body>
+<!--========== SCROLL TOP ==========-->
+
+
+<!--========== SCROLL REVEAL ==========-->
+<script src="https://unpkg.com/scrollreveal"></script>
+
+<!--========== MAIN JS ==========-->
+<script src="assets/js/main.js"></script>
+</html>
