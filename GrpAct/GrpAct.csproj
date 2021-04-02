@@ -129,6 +129,7 @@
     <Content Include="Media\logo.png" />
     <Content Include="Media\machu.PNG" />
     <Content Include="Media\projectoukay.png" />
+    <Content Include="Media\ship.PNG" />
     <Content Include="Media\style.css" />
     <Content Include="Media\zoi.PNG" />
     <Content Include="Models\assets\css\styles.css" />
@@ -492,6 +493,7 @@
     <Content Include="Views\GrpAct\Login.cshtml" />
     <Content Include="Views\GrpAct\Checkout.cshtml" />
     <Content Include="Views\GrpAct\Cart.cshtml" />
+    <Content Include="Views\GrpAct\Shipping.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

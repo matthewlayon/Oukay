@@ -25,5 +25,9 @@ namespace GrpAct.Controllers
         {
             return View();
         }
+        public ActionResult Shipping()
+        {
+            return View();
+        }
     }
 }
