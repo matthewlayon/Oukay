@@ -10,6 +10,8 @@ namespace Oukay.Data
 {
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
+        
+
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
             : base(options)
         {
@@ -19,5 +21,11 @@ namespace Oukay.Data
 
         public DbSet<Product> Products { get; set; }
         public DbSet<Category> Categories { get; set; }
+        public DbSet<Cart> Carts { get; set; }
+        public DbSet<CartDetail> CartDetails { get; set; }
+        public DbSet<Order> Orders { get; set; }
+        public DbSet<Contact> Contacts { get; set; }
+        //public DbSet<OrderDetail> OrderDetails { get; set; }
+
     }
 }

@@ -1,0 +1,97 @@
+﻿@model IEnumerable<Oukay.Models.Product>
+
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container">
+    <center>
+        <h1>Shop Now</h1>
+
+        <hr style="        width: 50%;
+        border-top: 3px solid #ffef2a;" />
+
+
+        @foreach (var item in Model)
+        {
+            <div class="card text-white bg-warning mb-3" style="max-width: 20rem;">
+                <h3 class="card-header  bg-success"> @Html.DisplayFor(modelItem => item.Name)</h3>
+
+                @*<img src="~/wwwroot/img/products/ @Html.DisplayFor(modelItem => item.ClothesUrl)" />*@
+                <center>
+                    <img src="@Url.Content(item.ImagePath)" width="80%" />
+                </center>
+
+                <rect width="100%" fill="#868e96"></rect>
+
+                @*@Html.DisplayFor(modelItem => item.ClothesUrl)*@
+
+                <div class="card-body  bg-success">
+                    <p class="card-text">  @Html.DisplayFor(modelItem => item.Description)</p>
+                </div>
+                <div class="card-body bg-success">
+                    <p class="card-text"> P  @Html.DisplayFor(modelItem => item.Price)</p>
+                </div>
+                <div class="card-body">
+                    @*@using (Html.BeginForm("AddtoCart", "Store", FormMethod.Post, new { id = item.ProductId}))*@
+                        
+
+                            <a href="@(Url.Action("AddtoCart", "Store", new { id = item.ProductId, quantity = 1}))"  onclick='return confirm("Do you really want it?");' class="btn btn-success btn-lg">Add to Cart</a>
+                        
+                    @*<a href="~/Store/Order" type="button" class="btn btn-success btn-lg" onclick='return confirm("Do you really want it?");'>Buy Now</a>*@
+                </div>
+            </div>
+
+            @*<tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Name)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Description)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Price)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ImagePath)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Available)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.DateAdded)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.DateModified)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Status)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.CatId)
+                    </td>
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@item.ProductId">Edit</a> |
+                        <a asp-action="Details" asp-route-id="@item.ProductId">Details</a> |
+                        <a asp-action="Delete" asp-route-id="@item.ProductId">Delete</a>
+                    </td>
+                </tr>*@
+        }
+
+    </center>
+
+
+</div>
+<a href="#" class="scrolltop" id="scroll-top">
+    <i class='bx bx-chevron-up scrolltop__icon'></i>
+</a>
+
+@section Scripts{
+  
+    <script src="https://unpkg.com/scrollreveal"></script>
+   
+}
+
+

@@ -1,0 +1,83 @@
+﻿
+@model Oukay.Models.Order
+
+@{
+    ViewData["Title"] = "Order";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<br/>
+<br/>
+<div >
+    <center>
+        <h1>Order Form</h1>
+    </center>
+</div>
+
+
+
+
+<hr style="        width: 50%;
+        border-top: 3px solid #ffef2a;" />
+
+    <div class="jumbotron bg-success">
+        <div class="row">
+            <div class="col-lg-6">
+                <img src="https://i.ibb.co/8cv4x5Q/about.jpg" alt="logo" width="500px" border="0" class="float-right">
+            </div>
+            <div class="col-lg-6">
+                <form asp-action="Order">
+                    @if (ViewBag.Message != null)
+                    {
+                        <div class="alert alert-success">
+                            @ViewBag.Message
+                        </div>
+                    }
+
+
+                    <div asp-validation-summary="ModelOnly" class="text-danger "></div>
+                    <div class="form-group  ">
+                        <label asp-for="FullName" class="control-label  text-white"></label>
+                        <input asp-for="FullName" class="form-control " />
+                        <span asp-validation-for="FullName" class="text-danger"></span>
+                    </div>
+                    <div class="form-group ">
+                        <label asp-for="Address" class="control-label  text-white"></label>
+                        <textarea asp-for="Address" class="form-control"></textarea>
+                        <span asp-validation-for="Address" class="text-danger"></span>
+                    </div>
+                    <div class="form-group ">
+                        <label asp-for="Phone" class="control-label  text-white"></label>
+                        <input asp-for="Phone" class="form-control" />
+                        <span asp-validation-for="Phone" class="text-danger"></span>
+                        
+                    </div>
+                    <div class="form-group ">
+                        
+                        <label asp-for="Email" class="control-label text-white"></label>
+                        <input asp-for="Email" class="form-control" />
+                        <span asp-validation-for="Email" class="text-danger"></span>
+                    </div>
+
+                    <p class="text-white">
+                        <strong>NOTE:</strong>
+                        We only accept Cash on Delivery right now.
+                    </p>
+
+
+                    <div class="form-group">
+                        <input type="submit" value="Submit" class="btn btn-warning" />
+                        <a asp-action="Index" class="btn btn-warning">Back to Shop</a>
+                    </div>
+
+                </form>
+
+            </div>
+        </div>
+
+
+        
+
+    </div>
+
+
+

@@ -8,10 +8,13 @@ using Oukay.Data;
 using Oukay.Models;
 using Microsoft.AspNetCore.Http;
 using System.IO;
+using Microsoft.AspNetCore.Authorization;
 
 
 namespace Oukay.Controllers
 {
+
+    [Authorize]
     public class ProductController : Controller
     {
         private readonly ApplicationDbContext _context;
@@ -20,8 +23,13 @@ namespace Oukay.Controllers
         {
             _context = context;
         }
+
+
+      
+
         public IActionResult Index()
         {
+            
             var list = _context.Products.Include(p => p.Category).ToList();
             return View(list);
         }
@@ -39,9 +47,10 @@ namespace Oukay.Controllers
             var product = new Product()
             {
                 Name = record.Name,
-            Description = record.Description,
-            Price = record.Price,
-            Available = 0,
+                Description = record.Description,
+                Price = record.Price,
+                Available = 0,
+                ImagePath = record.ImagePath,
             DateAdded = DateTime.Now,
             Status ="Active",
             Category = selectedCategory,
@@ -50,20 +59,20 @@ namespace Oukay.Controllers
 
         };
             
-            if(ImagePath != null)
-            {
-                if(ImagePath.Length >0)
-                {
-                    var filePath = Path.Combine(Directory.GetCurrentDirectory(),
-                        "wwwroot/img/products", ImagePath.FileName);
+            //if(ImagePath != null)
+            //{
+            //    if(ImagePath.Length >0)
+            //    {
+            //        var filePath = Path.Combine(Directory.GetCurrentDirectory(),
+            //            "wwwroot/img/products", ImagePath.FileName);
 
-                    using (var stream = new FileStream(filePath, FileMode.Create))
-                    {
-                        ImagePath.CopyTo(stream);
-                    }
-                    product.ImagePath = ImagePath.FileName;
-                }
-            }
+            //        using (var stream = new FileStream(filePath, FileMode.Create))
+            //        {
+            //            ImagePath.CopyTo(stream);
+            //        }
+            //        product.ImagePath = ImagePath.FileName;
+            //    }
+            //}
 
 
 
@@ -100,7 +109,7 @@ namespace Oukay.Controllers
             product.Description = record.Description;
             product.Price = record.Price;
             product.Available = 0;
-            product.DateAdded = DateTime.Now;
+            product.ImagePath = record.ImagePath;
             product.Status = "Active";
             product.Category = selectedCategory;
             product.CatId = record.CatId;
