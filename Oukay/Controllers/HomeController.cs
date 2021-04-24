@@ -68,12 +68,11 @@ namespace Oukay.Controllers
                 using (SmtpClient smtp = new SmtpClient())
                 {
                     smtp.Host = "smtp.gmail.com";
-
+                    smtp.EnableSsl = true;
                     NetworkCredential NetworkCred =
                         new NetworkCredential("mattlayon@gmail.com", "qwerty123!");
                     smtp.UseDefaultCredentials = false;
                     smtp.Credentials = NetworkCred;
-                    smtp.EnableSsl = true;
                     smtp.Port = 587;
                     smtp.Send(mail);
                     ViewBag.Message = "Inquiry sent";
