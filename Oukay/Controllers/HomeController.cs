@@ -69,9 +69,10 @@ namespace Oukay.Controllers
                 {
                     smtp.Host = "smtp.gmail.com";
                     smtp.EnableSsl = true;
+                    smtp.UseDefaultCredentials = false;
                     NetworkCredential NetworkCred =
                         new NetworkCredential("mattlayon@gmail.com", "qwerty123!");
-                    smtp.UseDefaultCredentials = false;
+                 
                     smtp.Credentials = NetworkCred;
                     smtp.Port = 587;
                     smtp.Send(mail);
