@@ -37,18 +37,18 @@ namespace Oukay.Controllers
             return View();
         }
         [HttpPost]
-        public IActionResult Order(Order record)
+        public IActionResult Order(Order order)
         {
 
             var list = _context.Products.ToList();
-            using (MailMessage mail = new MailMessage("mattlayon@gmail.com", record.Email))
+            using (MailMessage mail = new MailMessage("mattlayon@gmail.com", order.Email))
             {
                 string subject = "Order Detail";
                 mail.Subject = subject;
-                string message = "Hello, " + record.FullName + "! <br/><br/>" +
+                string message = "Hello, " + order.FullName + "! <br/><br/>" +
                     "Your Order has been successful. Here are the details: <br/><br/>" +
-                    "Address: <strong>" + record.Address + "</strong><br/><br/>" +
-                     "Phone: <strong>" + record.Phone + "</strong><br/><br/>" +
+                    "Address: <strong>" + order.Address + "</strong><br/><br/>" +
+                     "Phone: <strong>" + order.Phone + "</strong><br/><br/>" +
                      
                      "We will contact you once it it's delivered and we only accept Cash on Delivery <br/><br/>" +
                      "Thank you for shopping at Oukay!";
@@ -58,12 +58,12 @@ namespace Oukay.Controllers
                 using (SmtpClient smtp = new SmtpClient())
                 {
                     smtp.Host = "smtp.gmail.com";
-                  
-                    NetworkCredential NetworkCred =
-                        new NetworkCredential("mattlayon@gmail.com", "qwerty123!");
-                    smtp.UseDefaultCredentials = false;
-                    smtp.Credentials = NetworkCred;
                     smtp.EnableSsl = true;
+                    smtp.UseDefaultCredentials = false;
+                    NetworkCredential NetworkCred =
+                        new NetworkCredential("mattlayon@gmail.com", "JanMatthewLayon041300!");
+
+                    smtp.Credentials = NetworkCred;
                     smtp.Port = 587;
                     smtp.Send(mail);
                     ViewBag.Message = "Order sent";
@@ -72,10 +72,10 @@ namespace Oukay.Controllers
 
             var email = new Order()
             {
-                FullName = record.FullName,
-                Address = record.Address,
-                Phone = record.Phone,
-                Email = record.Email
+                FullName = order.FullName,
+                Address = order.Address,
+                Phone = order.Phone,
+                Email = order.Email
             };
             _context.Orders.Add(email);
             _context.SaveChanges();
